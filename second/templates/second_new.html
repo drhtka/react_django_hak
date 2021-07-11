@@ -64,12 +64,12 @@
 
         <div>
             <div class="im">Добавляем работника</div>
-            <select>
+            <select class="classOption"><option value="0">Выберете</option>
                 {% for all_works_distinct_s in all_works_distinct %}
                     <option value="{{ all_works_distinct_s.datauser }}">{{  all_works_distinct_s.datauser }}</option>
                 {% endfor %}
             </select>
-            <input type="text"/>
+            <input class="classNameUser" type="text"/>
             <button type='button'>Добавить</button><div class="text_null_search">Все ок</div>
         </div>
 

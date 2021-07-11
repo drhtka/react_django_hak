@@ -10,8 +10,13 @@ class App extends React.Component {
             userNameWorks_edit: [],
             select_user: '',
             input_user: '',
-            text_null_search: 'Все ок',
+            text_null_search: 'Все ок!!!!!!!!!!',
+            text_null_search_input:  'text_null_search_input',
             text : '',
+            classOption: '',
+            classNameUser: 'classNameUser',
+
+
         }
     }
     worksState(event){
@@ -55,20 +60,31 @@ class App extends React.Component {
         // let works_name = this.state.userNameWorks
 
         // this.setState({select_user:event.target.value})
-        if (this.state.input_user.length == 0 || this.state.input_user == '' || this.state.select_user.length == 0) { // запрещаем ввод пустоты
-            this.setState({text_null_search: 'Поле пустое'}) // записываем в значение что поле пустое
+        if (this.state.select_user.length == 0 || this.state.input_user == '') { // запрещаем ввод пустоты
+            this.setState({classOption:'error'});
+            // this.setState({classNameUser:'error'});
+            this.setState({text_null_search: 'Должность не выбрана'}) // записываем в значение что поле пустоеd
+
+            // alert('Введите данные добаволения')
+
+        }
+        if (this.state.input_user.length == 0 || this.state.input_user == '') { // запрещаем ввод пустоты
+            this.setState({classNameUser:'error'});
+            // this.setState({classNameUser:'error'});
+            this.setState({text_null_search_input: 'Поле ввода пустое'}) // записываем в значение что поле пустое
+
             // alert('Введите данные добаволения')
         }
         else {
+            this.setState({classOption:'success'});
+            this.setState({classNameUser:'success'});
 
         console.log('qwety')
         console.log(this.state.input_user)
         let selectuser = this.state.select_user
         let inputuser = this.state.input_user
 
-        // console.log('selectuser  inputuser')
-        // console.log(selectuser)
-        // console.log(inputuser)
+
         fetch('/secondfetch/?selectuser=' + selectuser + '&inputuser=' + inputuser)
             // fetch('secondfetch?select_user=' + test )
             // Handle success
@@ -138,7 +154,7 @@ class App extends React.Component {
 
         const list2 = this.state.userNameWorks.map((item, index) => { //<!--сделали для подстановки значения по умоллчанию <option >Выберете</option>-->
             let datausers = item.datauser
-            return <option key={index} value={datausers}>{datausers}</option>
+            return <option className={this.state.classOption} key={index} value={datausers}>{datausers}</option>
             // <li>Имя : {item.datauser}</li>
         });
 
@@ -146,16 +162,18 @@ class App extends React.Component {
 
             return  <div className="parent">
                 <div>{list}</div>
-                    <form>
-                            <select onChange={this.selectUser.bind(this)} id='chek_select'>
-                                <option value='0' >Выберете</option>
+                    <form className='formClass'>
+                            <select  className={this.state.classOption} onChange={this.selectUser.bind(this)} id='chek_select'>
+                                <option value='0'>Выберете</option>
                                 {list2}
                             </select>
-                            <input className='colorError' onChange={this.inputUser.bind(this)} type="text"/>
+                            <input className={this.state.classNameUser} placeholder='Ввести Имя' onChange={this.inputUser.bind(this)} type="text"/>
 
-                            <button onClick={this.optionUser.bind(this)} type='button'>Добавить</button>
+                            <button onClick={this.optionUser.bind(this)} type='button'>Добавить</button> {/*render зарезервированное имя в реакте выводит даные*/}
+
                     </form>
                 <div className="text_null_search">{this.state.text_null_search}</div>
+                <div className="text_null_search_input">{this.state.text_null_search_input}</div>
                     </div>;
 
 
