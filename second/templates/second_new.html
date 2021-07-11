@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}<title>Второй хак по React</title>{% endblock title %}
+{% block content %}
+
+
+    <style>
+        .im{
+            margin-left: 8%;
+            color: #5b80b2;
+            margin-top: -37px;
+        }
+        .im-color{
+            color: #4ac1f7;
+        }
+        .text_null_search{
+            font-size: 25px;
+            color: #0000FF;
+            font-family: Lora;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        .main{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: nowrap;
+            width: 100%;
+            flex-direction: row;
+        }
+        .children_1{
+            height: 23%;
+            width: 92%;
+        }
+        .children_2{
+            height: 23%;
+            width: 92%;
+        }
+        .text_null_search{
+            font-size: 25px;
+            color: #0000FF;
+            font-family: Lora;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            margin-left: 10%;
+        }
+    </style>
+    <H4  class="im-color">Второй хак по React</H4>
+{#    <div id="app">#}
+{#    </div>#}
+    alll
+    <div class="main">
+        <div>
+            <ul>
+                {% for all_works_s in all_works %}
+                    <li>Имя : {{ all_works_s.datauser }}</li>
+                    <li>Должность: {{ all_works_s.username }}</li><br>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div>
+            <div class="im">Добавляем работника</div>
+            <select>
+                {% for all_works_distinct_s in all_works_distinct %}
+                    <option value="{{ all_works_distinct_s.datauser }}">{{  all_works_distinct_s.datauser }}</option>
+                {% endfor %}
+            </select>
+            <input type="text"/>
+            <button type='button'>Добавить</button><div class="text_null_search">Все ок</div>
+        </div>
+
+
+    </div>;
+
+{#    <div class="mydiv">hello1</div>#}
+{#    <input id="test">1111111</input>#}
+{% endblock %}
+{% block react %}
+{#    <div id="app"></div>#}
+    <script type="text/babel" src="{% static "second/js/second.js" %}"></script>
+
+{% endblock react %}

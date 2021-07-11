@@ -1,0 +1,56 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+
+    {% block title %}<title>ReactJS</title>{% endblock title %}
+{#    <link type="text/css" rel="stylesheet" href="{% static "react/css/style.css" %}">#}
+{#    <link type="text/css" rel="stylesheet" href="{% static "react2/css/style2.css" %}">#}
+{#    <link type="text/css" rel="stylesheet" href="{% static "react3/css/style3.css" %}">#}
+{#    <link type="text/css" rel="stylesheet" href="{% static "react4/css/style4.css" %}">#}
+{#    <link type="text/css" rel="stylesheet" href="{% static "react5/css/style5.css" %}">#}
+{#    <link type="text/css" rel="stylesheet" href="{% static "react6/css/style6.css" %}">#}
+{#    <link type="text/css" rel="stylesheet" href="{% static "react7/css/style7.css" %}">#}
+{#    <link type="text/css" rel="stylesheet" href="{% static "react8/css/style8.css" %}">#}
+    {#    <link type="text/css" rel="stylesheet" href="{% static "react9/css/style9.css" %}">#}
+    {% block css %}{% endblock css %}
+</head>
+<body clas="body_cont">
+<div style="text-align: center">
+{#    <h2><a href="{% url 'index' %}">Главная</a></h2>#}
+</div>
+{% block content %}{% endblock %}
+<div id="root"></div>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+{% block react %}{% endblock react %}
+{% comment %}
+<div id="appdz"></div>
+
+<div id="app2"></div>
+
+<div id="appdz2"></div>
+
+<div id="app3"></div>
+<div id="appdz3"></div>
+<div id="app4"></div>
+<div id="appdz4"></div>
+<div id="app5"></div>
+<div id="appdz5"></div>
+<div id="app6"></div>
+
+<div id="appdz6"></div>
+<div id="app7"></div>
+<div id="appdz7"></div>
+<div id="app8"></div>
+<div id="appdz8"></div>
+<div id="app9"></div>{% endcomment %}
+
+
+
+</body>
+</html>

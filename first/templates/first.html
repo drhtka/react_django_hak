@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div id="app">
+    </div>
+    <div class="im">11111</div>
+
+
+{% endblock %}
+
+{% block react %}
+    <div id="app"></div>
+    <script type="text/babel" src="{% static "first/js/first.js" %}"></script>
+{% endblock react %}

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}<title>Второй хак по React</title>{% endblock title %}
+{% block content %}
+
+    <style>
+        .im{
+            margin-left: 8%;
+            color: #5b80b2;
+            margin-top: -37px;
+        }
+        .im-color{
+            color: #4ac1f7;
+        }
+        .text_null_search{
+            font-size: 25px;
+            color: #0000FF;
+            font-family: Lora;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        .main{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: nowrap;
+            width: 100%;
+            flex-direction: row;
+        }
+        .text_null_search{
+            font-size: 25px;
+            color: #0000FF;
+            font-family: Lora;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        .parent{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: nowrap;
+            width: 100%;
+            flex-direction: row;
+        }
+        .colorError{
+            color: green;
+            border: 1px solid green;
+        }
+
+        .error{
+            border: 1px solid red;
+        }
+        .success{
+            border: 1px solid green;
+        }
+    </style>
+    <H4  class="im-color">Второй хак по React</H4>
+    <div class="main">
+        <div id="app" class="main"></div>
+{#        <div class="im children">Добавляем работника</div>#}
+    </div>
+
+
+{#    <div class="mydiv">hello1</div>#}
+{#    <input id="test">1111111</input>#}
+{% endblock %}
+{% block react %}
+    <div id="app"></div>
+    <script type="text/babel" src="{% static "second/js/second.js" %}"></script>
+{% endblock react %}
